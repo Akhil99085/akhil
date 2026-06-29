@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise 🎂</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Password Screen -->
+    <div id="passwordScreen" class="screen active">
+        <div class="password-container">
+            <h1 class="title-glow">🎂 Birthday Surprise 🎂</h1>
+            <p class="subtitle">Enter her date of birth to unlock the surprise</p>
+            <p class="hint">(Format: DD/MM/YYYY)</p>
+            
+            <div class="input-group">
+                <input 
+                    type="password" 
+                    id="passwordInput" 
+                    placeholder="DD/MM/YYYY" 
+                    maxlength="10"
+                    autocomplete="off"
+                >
+                <button id="submitBtn" class="btn btn-primary">Unlock Surprise</button>
+            </div>
+            
+            <p id="errorMsg" class="error-message"></p>
+            
+            <div class="floating-balloons">
+                <div class="balloon" style="--i: 0;"></div>
+                <div class="balloon" style="--i: 1;"></div>
+                <div class="balloon" style="--i: 2;"></div>
+                <div class="balloon" style="--i: 3;"></div>
+                <div class="balloon" style="--i: 4;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Heart Screen -->
+    <div id="heartScreen" class="screen">
+        <div class="stars-bg">
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+        </div>
+        <div class="heart-container">
+            <p class="heart-instruction">Click the heart to unlock your surprise! 💓</p>
+            <div class="heart-wrapper">
+                <div class="heart" id="clickHeart"></div>
+            </div>
+            <p class="pulse-text">💗 Click Me 💗</p>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="screen">
+        <div class="loading-container">
+            <canvas id="fireworksCanvas"></canvas>
+            <div class="loader">
+                <div class="spinner"></div>
+                <p>Loading your surprise...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Birthday Wishes Screen -->
+    <div id="wishesScreen" class="screen">
+        <canvas id="confettiCanvas"></canvas>
+        <div class="wishes-container">
+            <div class="wishes-content">
+                <div class="cake-emoji">🎂</div>
+                <h1 class="wishes-title">Happy 20th Birthday! 🎉</h1>
+                <p class="wishes-message">Wishing you a day filled with love, laughter, and magic!</p>
+                <div class="balloons-container">
+                    <span class="balloon-emoji">🎈</span>
+                    <span class="balloon-emoji">🎈</span>
+                    <span class="balloon-emoji">🎈</span>
+                </div>
+                <button id="openHeartBtn" class="btn btn-heart">Open My Heart 💌</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Birthday Card Screen -->
+    <div id="cardScreen" class="screen">
+        <div class="card-scene">
+            <div class="card-container" id="card3d">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>Happy 20th Birthday! 🎂</h2>
+                        <p>To Someone Special</p>
+                        <div class="sparkles">
+                            <span>✨</span>
+                            <span>✨</span>
+                            <span>✨</span>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="card-inside">
+                            <h3>To You,</h3>
+                            <p class="card-message">
+                                On your 20th birthday, I want you to know how special you are to me. 
+                                <br><br>
+                                You bring joy, warmth, and light into my life every single day. 
+                                Your smile brightens even the darkest days, and your laughter is music to my ears.
+                                <br><br>
+                                Thank you for being you. Thank you for all the beautiful moments we've shared.
+                                <br><br>
+                                Here's to another year of dreams, adventures, and endless possibilities.
+                                <br><br>
+                                <span class="signature">With all my love,</span>
+                                <br>
+                                <span class="heart-sig">❤️ Forever Yours ❤️</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="card-hint">Click the card to turn the page</p>
+        </div>
+    </div>
+
+    <audio id="clickSound" preload="auto"></audio>
+    <audio id="successSound" preload="auto"></audio>
+    <audio id="bgMusic" preload="auto" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
